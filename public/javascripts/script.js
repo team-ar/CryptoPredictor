@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  console.log('IronGenerator JS imported successfully!');
+  axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=0&limit=5000&convert=USD')
+  
 
 }, false);
