@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+
+  <nav>
+    <ul>
+      {{#if isUserLoggedIn }}
+        <li><a href="/map">Map</a></li>
+        <li><a href="/table">Table</a></li>
+        <li><a href="/personalPredictions">Personal Predictions</a></li>
+        <li><a href="/otherPredictions">See other user's predictions</a></li>
+        <li><a href="/logout">Log out</a></li>
+      {{else}}
+        <li><a href="/map">Map</a></li>
+        <li><a href="/table">Table</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/login">Log In</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+
+  {{{body}}}
+
+  <footer>
+
+  </footer>
+
+  <script src="/javascripts/script.js"></script>
+</body>
+</html>
