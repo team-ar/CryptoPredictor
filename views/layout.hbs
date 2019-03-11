@@ -1,39 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
 
-  <nav>
+  <nav class="nav-bar">
+    <p>CryptoPredictor</p>
 
-    <ul>
+
+    <ul class="nav-right-side">
       {{#if isUserLoggedIn }}
-        <li><a href="/map">Map</a></li>
-        <li><a href="/table">Table</a></li>
-        <li><a href="/personalPredictions">Personal Predictions</a></li>
-        <li><a href="/otherPredictions">See other user's predictions</a></li>
-        <li><a href="/logout">Log out</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/predictions">Predictions</a></li>
+      <li><a href="/logout">Log out</a></li>
       {{else}}
-        <li><a href="/map">Map</a></li>
-        <li><a href="/table">Table</a></li>
-        <li><a href="/signup">Sign Up</a></li>
-        <li><a href="/login">Log In</a></li>
+      <li><a id="signup">Sign Up</a></li>
+      <li><a id="login">Log In</a></li>
       {{/if}}
     </ul>
+
   </nav>
+
+      {{!-- CREATE LOGIN-BOX --}}
+
+    <div id="login-box">
+      <h2> Log In </h2>
+
+      {{#if errorMessage}}
+      <p class="error-message">
+        {{ errorMessage }}
+      </p>
+      {{/if}}
+
+      <form action="/login" method="post">
+        <div>
+          <label for="email-input"> Email </label>
+          <input type="email" name="email" id="email-input" placeholder="xena@warrior.company">
+        </div>
+
+        <div>
+          <label for="password-input"> Password </label>
+          <input type="password" name="password" id="password-input" placeholder="••••••••••••">
+        </div>
+
+        <button> Log In </button>
+      </form>
+
+      <p>
+        Don't have an account?
+        <a href="/signup">
+          Create an account.
+        </a>
+      </p>
+
+    </div>
+
+    {{!-- CREATE SIGNUP-BOX --}}
+
+    <div id="signup-box">
+
+      <h2> Sign Up </h2>
+
+      {{#if errorMessage}}
+      <p class="error-message">
+        {{ errorMessage }}
+      </p>
+      {{/if}}
+
+      <form action="/signup" method="post">
+        <div>
+          <label for="name-input"> Name </label>
+          <input type="text" name="name" id="name-input" placeholder="Diana Prince">
+        </div>
+
+        <div>
+          <label for="email-input"> Email </label>
+          <input type="email" name="email" id="email-input" placeholder="diana@themyscira.agency">
+        </div>
+
+        <div>
+          <label for="password-input"> Password </label>
+          <input type="password" name="password" id="password-input" placeholder="••••••••••••">
+        </div>
+
+        <button> Create New Account </button>
+      </form>
+
+      <p>
+        Already have an account?
+        <a href="/login">
+          Log in.
+        </a>
+      </p>
+    </div>
 
   {{{body}}}
 
   <footer>
 
   </footer>
-  
+
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="/javascripts/script.js"></script>
 </body>
+
 </html>

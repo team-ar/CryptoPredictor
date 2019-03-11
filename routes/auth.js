@@ -9,7 +9,7 @@ const bcryptSalt = 10;
 
 // Randerizar formulario SIGNUP
 
-router.get("/signup", (req, res) => res.render("auth/signup"))
+// router.get("/signup", (req, res) => res.render("auth/signup"))
 
 // Registrar datos formulario SIGNUP
 router.post("/signup", (req, res, next) => {
@@ -52,7 +52,7 @@ router.post("/signup", (req, res, next) => {
 
 // Randerizar formulario LOGIN
 
-router.get("/login", (req, res) => res.render("auth/login"))
+// router.get("/login", (req, res) => res.render("auth/login"))
 
 
 router.post("/login", (req, res, next) => {
