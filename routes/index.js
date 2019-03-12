@@ -5,14 +5,14 @@ const apiCoinMarket = require("../public/javascripts/apiCoinMarket")
 /* GET home page */
 router.get('/', (req, res, next) => {
 
-  apiCoinMarket.getAllCoins()
+    apiCoinMarket.getAllCoins()
 
     .then(marketCoins => {
-      const marketCoins20 = marketCoins.data.slice(0, 20)
+        const marketCoins20 = marketCoins.data.slice(0, 20)
 
-      // console.log(marketCoins20)
-      res.render('index', { coins: marketCoins20 });
-      //
+        // console.log(marketCoins20)
+        res.render('index', { coins: marketCoins20 });
+        //
     })
 });
 
@@ -20,10 +20,16 @@ router.get('/', (req, res, next) => {
 
 router.get("/:id", (req, res) => {
 
-  // console.log(req.params.id)
+    // console.log(req.params.id)
 
-  const id = req.params.id
+    const id = req.params.id
 
+    apiCoinMarket.getOneCoin(id)
+        .then(marketCoin => {
+            console.log(marketCoin)
+        })
+
+<<<<<<< HEAD
   apiCoinMarket.getOneCoin(id)
   .then(marketCoin => {
     console.log(marketCoin)
@@ -32,6 +38,8 @@ router.get("/:id", (req, res) => {
 
   })
   
+=======
+>>>>>>> c25732a0718cba270c4a7e087488005ccba32c4e
 })
 
 module.exports = router;
