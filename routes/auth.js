@@ -57,6 +57,8 @@ router.post("/signup", (req, res, next) => {
 
 router.post("/login", (req, res, next) => {
 
+  console.log(req.body)
+
   const theEmail = req.body.email;
   const thePassword = req.body.password;
 

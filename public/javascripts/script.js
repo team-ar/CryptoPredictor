@@ -3,13 +3,20 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+<<<<<<< HEAD
     const login = document.getElementById("login")
     const singup = document.getElementById("signup")
     const singup2 = document.getElementById("singup2")
+=======
+  const login = document.getElementById("login")
+  const singup = document.getElementById("signup")
+  const singup2 = document.getElementById("singup2")
+>>>>>>> 0443216f8e4e757ecd8e339bf25d9f9725a6cf81
 
     const loginBox = document.getElementById("login-box")
     const signupBox = document.getElementById("signup-box")
 
+<<<<<<< HEAD
     login.onclick = e => {
         if (loginBox.style.display === "block") loginBox.style.display = "none"
         else loginBox.style.display = "block"
@@ -24,17 +31,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
         loginBox.style.display = "none"
     }
+=======
+  login.onclick = e => {
+      if (loginBox.style.display === "block") loginBox.style.display = "none"
+      else loginBox.style.display = "block"
+
+      signupBox.style.display = "none"
+  }
+
+
+  const singupEvent = e => {
+      if (signupBox.style.display === "block") signupBox.style.display = "none"
+      else signupBox.style.display = "block"
+
+      loginBox.style.display = "none"
+  }
+
+  singup.onclick = singupEvent
+  singup2.onclick = singupEvent
+>>>>>>> 0443216f8e4e757ecd8e339bf25d9f9725a6cf81
 
     singup.onclick = singupEvent
     singup2.onclick = singupEvent
 
+<<<<<<< HEAD
+=======
+}, false);
+>>>>>>> 0443216f8e4e757ecd8e339bf25d9f9725a6cf81
 
 }, false);
 
+//                        Original Variable
 
 //                        Original Variable
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0443216f8e4e757ecd8e339bf25d9f9725a6cf81
 // document.addEventListener('DOMContentLoaded', () => {
 
 //     const login = document.getElementById("login")

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
           {{!-- Cryptocurrency Name --}}
 
 <section>
@@ -11,12 +12,31 @@
 <section>
 
   <canvas id="myChart"></canvas>
+=======
+{{!-- Cryptocurrency Name --}}
+
+<section>
+
+ <h1>Cryptocurrency: {{symbol}}</h1>
+
+</section>
+
+         {{!-- Cryptocurrency Chart with Canvas --}}
+
+<section>
+
+ <canvas id="myChart"></canvas>
+>>>>>>> 0443216f8e4e757ecd8e339bf25d9f9725a6cf81
 
 </section>
 
 <p>Want to create a prediccion? <a id="singup2">Sing Up</a></p>
 
+<<<<<<< HEAD
           {{!-- Create a Prediction --}}
+=======
+         {{!-- Create a Prediction --}}
+>>>>>>> 0443216f8e4e757ecd8e339bf25d9f9725a6cf81
 
 {{#if isUserLoggedIn }}
 <a href="/predictions/{{userId}}">Make a Prediction</a>
@@ -24,7 +44,11 @@
 
 
 
+<<<<<<< HEAD
           {{!-- Show Users Prefictios if is logged in --}}
+=======
+         {{!-- Show Users Prefictios if is logged in --}}
+>>>>>>> 0443216f8e4e757ecd8e339bf25d9f9725a6cf81
 
 {{!-- {{#each coins}}
 <p>{{open}}</p>
@@ -36,6 +60,7 @@
 
 <script>
 
+<<<<<<< HEAD
   let arrayClosePrice = []
   let arrayDayPrice = []
 
@@ -68,5 +93,39 @@
       
     }
   });
+=======
+ let arrayClosePrice = []
+ let arrayDayPrice = []
+
+ let coins = {{{ coins }}}
+ coins.forEach(coin => arrayClosePrice.push(coin.close))
+
+ coins.forEach(coin => arrayDayPrice.push(moment(coin.time * 1000).format("MMM Do YYYY")))
+
+ // console.log(arrayDayPrice)
+
+ var ctx = document.getElementById('myChart').getContext('2d');
+ var chart = new Chart(ctx, {
+
+   // The type of chart we want to create
+   type: 'bar',
+
+   // The data for our dataset
+   data: {
+     labels: arrayDayPrice,
+     datasets: [{
+       label: "USD Price",
+       backgroundColor: 'rgb(3, 146, 51)',
+       borderColor: 'rgb(3, 146, 51)',
+       data: arrayClosePrice,
+     }]
+   },
+
+   // Configuration options go here
+   options: {
+
+   }
+ });
+>>>>>>> 0443216f8e4e757ecd8e339bf25d9f9725a6cf81
 
 </script>
