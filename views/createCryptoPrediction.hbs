@@ -1,0 +1,22 @@
+<form action="/predictions/{{user.id}}" method="POST">
+  <h2>Create a prediction</h2>
+
+  <label for="prediction">Predict market</label>
+  <input type="text" name="prediction" placeholder="BULL/BEAR" required>
+
+  <label for="price">Predict price</label>
+  <input type="price" name="price" placeholder="Introduce USD value" required>
+
+  <label for="startDate">Start Date</label>
+  <input type="date" name="startDate" placeholder="Start date" required>
+
+  <label for="endDate">End Date</label>
+  <input type="date" name="endDate" placeholder="endDate" required>
+
+  <button> Create New Prediction </button>
+
+  {{#if errorMsg }}
+    <div class="error-message">{{ errorMsg }}</div>
+  {{/if}}
+ 
+</form>

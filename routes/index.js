@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const apiCoinMarket = require("../public/javascripts/apiCoinMarket")
+const User = require("../models/User");
+
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -12,32 +14,27 @@ router.get('/', (req, res, next) => {
 
         // console.log(marketCoins20)
         res.render('index', { coins: marketCoins20 });
-        //
+        
     })
 });
 
 
 
-router.get("/:id", (req, res) => {
+router.get("/coin/:id", (req, res) => {
 
-    // console.log(req.params.id)
 
     const id = req.params.id
-
+  
     apiCoinMarket.getOneCoin(id)
         .then(marketCoin => {
-            console.log(marketCoin)
-        })
-
-    apiCoinMarket.getOneCoin(id)
-        .then(marketCoin => {
-            console.log(marketCoin)
                 // res.json(marketCoin.data[id])
                 // res.json(marketCoin)
-            res.render('cryptocurrency', { coins: marketCoin });
-
+            res.render('cryptocurrency', { coins: JSON.stringify(marketCoin.Data),symbol: id, userId: req.session.currentUser !== undefined ? req.session.currentUser._id : "notLoggin" });
+ 
         })
-
+ 
 })
+
+
 
 module.exports = router;
