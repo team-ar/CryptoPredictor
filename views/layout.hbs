@@ -8,6 +8,10 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+
 </head>
 
 <body>
@@ -29,78 +33,78 @@
 
   </nav>
 
-      {{!-- CREATE LOGIN-BOX --}}
+  {{!-- CREATE LOGIN-BOX --}}
 
-    <div id="login-box">
-      <h2> Log In </h2>
+  <div id="login-box">
+    <h2> Log In </h2>
 
-      {{#if errorMessage}}
-      <p class="error-message">
-        {{ errorMessage }}
-      </p>
-      {{/if}}
+    {{#if errorMessage}}
+    <p class="error-message">
+      {{ errorMessage }}
+    </p>
+    {{/if}}
 
-      <form action="/login" method="post">
-        <div>
-          <label for="email-input"> Email </label>
-          <input type="email" name="email" id="email-input" placeholder="xena@warrior.company">
-        </div>
+    <form action="/login" method="post">
+      <div>
+        <label for="email-input"> Email </label>
+        <input type="email" name="email" id="email-input" placeholder="xena@warrior.company">
+      </div>
 
-        <div>
-          <label for="password-input"> Password </label>
-          <input type="password" name="password" id="password-input" placeholder="••••••••••••">
-        </div>
+      <div>
+        <label for="password-input"> Password </label>
+        <input type="password" name="password" id="password-input" placeholder="••••••••••••">
+      </div>
 
-        <button> Log In </button>
-      </form>
+      <button> Log In </button>
+    </form>
 
-      <p>
-        Don't have an account?
-        <a href="/signup">
-          Create an account.
-        </a>
-      </p>
+    <p>
+      Don't have an account?
+      <a href="/signup">
+        Create an account.
+      </a>
+    </p>
 
-    </div>
+  </div>
 
-    {{!-- CREATE SIGNUP-BOX --}}
+  {{!-- CREATE SIGNUP-BOX --}}
 
-    <div id="signup-box">
+  <div id="signup-box">
 
-      <h2> Sign Up </h2>
+    <h2> Sign Up </h2>
 
-      {{#if errorMessage}}
-      <p class="error-message">
-        {{ errorMessage }}
-      </p>
-      {{/if}}
+    {{#if errorMessage}}
+    <p class="error-message">
+      {{ errorMessage }}
+    </p>
+    {{/if}}
 
-      <form action="/signup" method="post">
-        <div>
-          <label for="name-input"> Name </label>
-          <input type="text" name="name" id="name-input" placeholder="Diana Prince">
-        </div>
+    <form action="/signup" method="post">
+      <div>
+        <label for="name-input"> Name </label>
+        <input type="text" name="name" id="name-input" placeholder="Diana Prince">
+      </div>
 
-        <div>
-          <label for="email-input"> Email </label>
-          <input type="email" name="email" id="email-input" placeholder="diana@themyscira.agency">
-        </div>
+      <div>
+        <label for="email-input"> Email </label>
+        <input type="email" name="email" id="email-input" placeholder="diana@themyscira.agency">
+      </div>
 
-        <div>
-          <label for="password-input"> Password </label>
-          <input type="password" name="password" id="password-input" placeholder="••••••••••••">
-        </div>
+      <div>
+        <label for="password-input"> Password </label>
+        <input type="password" name="password" id="password-input" placeholder="••••••••••••">
+      </div>
 
-        <button> Create New Account </button>
-      </form>
+      <button> Create New Account </button>
+    </form>
 
-      <p>
-        Already have an account?
-        <a href="/login">
-          Log in.
-        </a>
-      </p>
-    </div>
+    <p>
+      Already have an account?
+      <a href="/login">
+        Log in.
+      </a>
+    </p>
+  </div>
 
   {{{body}}}
 

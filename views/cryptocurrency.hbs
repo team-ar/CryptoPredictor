@@ -1,6 +1,72 @@
-      <p>Hola!!!</p>
+          {{!-- Cryptocurrency Name --}}
+
+<section>
+
+  <h1>Cryptocurrency: {{symbol}}</h1>
+
+</section>
+
+          {{!-- Cryptocurrency Chart with Canvas --}}
+
+<section>
+
+  <canvas id="myChart"></canvas>
+
+</section>
+
+<p>Want to create a prediccion? <a id="singup2">Sing Up</a></p>
+
+          {{!-- Create a Prediction --}}
+
+{{#if isUserLoggedIn }}
+<a href="/predictions/{{userId}}">Make a Prediction</a>
+{{/if}}
+
+
+
+          {{!-- Show Users Prefictios if is logged in --}}
+
+{{!-- {{#each coins}}
+<p>{{open}}</p>
+{{/each}}
+
+{{#if isUserLoggedIn }}
+<li><a href="/{{id}}/info">Create Prediction</a></li>
+{{/if}} --}}
+
+<script>
+
+  let arrayClosePrice = []
+  let arrayDayPrice = []
+
+  let coins = {{{ coins }}}
+  coins.forEach(coin => arrayClosePrice.push(coin.close))
+
+  coins.forEach(coin => arrayDayPrice.push(moment(coin.time * 1000).format("MMM Do YYYY")))
+
+  // console.log(arrayDayPrice)
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var chart = new Chart(ctx, {
+
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+      labels: arrayDayPrice,
+      datasets: [{
+        label: "USD Price",
+        backgroundColor: 'rgb(3, 146, 51)',
+        borderColor: 'rgb(3, 146, 51)',
+        data: arrayClosePrice,
+      }]
+    },
+
+    // Configuration options go here
+    options: {
       
-      
-      {{#if isUserLoggedIn }}
-      <li><a href="/{{id}}/info">Create Prediction</a></li>
-      {{/if}}
+    }
+  });
+
+</script>

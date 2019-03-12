@@ -18,11 +18,13 @@ router.get('/', (req, res, next) => {
 
 
 
-router.get("/:id", (req, res) => {
+router.get("/coin/:id", (req, res) => {
 
     // console.log(req.params.id)
 
     const id = req.params.id
+
+    console.log(id)
 
     apiCoinMarket.getOneCoin(id)
         .then(marketCoin => {
@@ -34,8 +36,8 @@ router.get("/:id", (req, res) => {
             console.log(marketCoin)
                 // res.json(marketCoin.data[id])
                 // res.json(marketCoin)
-            res.render('cryptocurrency', { coins: marketCoin });
-
+                // res.render('cryptocurrency', { coins: JSON.stringify(marketCoin.Data), symbol: id });
+            res.render('cryptocurrency', { coins: JSON.stringify(marketCoin.Data), symbol: id, userId: req.session.currentUser !== undefined ? req.session.currentUser._id : "notLoggin" });
         })
 
 })

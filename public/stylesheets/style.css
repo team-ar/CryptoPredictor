@@ -1,25 +1,34 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: gray;
+    color: white;
+}
 
 a {
-  color: #00B7FF; }
+    color: #00B7FF;
+}
 
 #login-box {
-  display: none; }
+    display: none;
+}
 
 #signup-box {
-  display: none; }
+    display: none;
+}
 
 .nav-bar {
-  background: #39383A;
-  display: flex;
-  justify-content: space-between;
-  color: #fafafa; }
+    background: #39383A;
+    display: flex;
+    justify-content: space-between;
+    color: #fafafa;
+}
 
 .nav-right-side {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-  color: #fafafa; }
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    color: #fafafa;
+}
+
 
 /*# sourceMappingURL=style.css.map */
