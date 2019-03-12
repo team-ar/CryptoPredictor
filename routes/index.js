@@ -29,17 +29,15 @@ router.get("/:id", (req, res) => {
             console.log(marketCoin)
         })
 
-  apiCoinMarket.getOneCoin(symbol)
-  .then(marketCoin => {
-    console.log(marketCoin.data)
-    // res.json(marketCoin.data[id])
-    res.json(marketCoin)
+    apiCoinMarket.getOneCoin(id)
+        .then(marketCoin => {
+            console.log(marketCoin)
+                // res.json(marketCoin.data[id])
+                // res.json(marketCoin)
+            res.render('cryptocurrency', { coins: marketCoin });
 
-  })
-  
+        })
+
 })
 
 module.exports = router;
-
-
-// https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC,ETH,XRP,BCH,EOS,LTC,XLM&convert=BTC,ETH,EUR
