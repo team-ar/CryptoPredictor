@@ -29,17 +29,14 @@ router.get("/:id", (req, res) => {
             console.log(marketCoin)
         })
 
-<<<<<<< HEAD
-  apiCoinMarket.getOneCoin(id)
+  apiCoinMarket.getOneCoin(symbol)
   .then(marketCoin => {
-    console.log(marketCoin)
+    console.log(marketCoin.data)
     // res.json(marketCoin.data[id])
     res.json(marketCoin)
 
   })
   
-=======
->>>>>>> c25732a0718cba270c4a7e087488005ccba32c4e
 })
 
 module.exports = router;
