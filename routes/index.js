@@ -16,6 +16,8 @@ router.get('/', (req, res, next) => {
     })
 });
 
+
+
 router.get("/:id", (req, res) => {
 
   // console.log(req.params.id)
@@ -24,7 +26,10 @@ router.get("/:id", (req, res) => {
 
   apiCoinMarket.getOneCoin(id)
   .then(marketCoin => {
+    console.log(marketCoin)
+    // res.json(marketCoin.data[id])
     res.json(marketCoin)
+
   })
   
 })
@@ -32,4 +37,4 @@ router.get("/:id", (req, res) => {
 module.exports = router;
 
 
-https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC,ETH,XRP,BCH,EOS,LTC,XLM&convert=BTC,ETH,EUR
+// https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC,ETH,XRP,BCH,EOS,LTC,XLM&convert=BTC,ETH,EUR
