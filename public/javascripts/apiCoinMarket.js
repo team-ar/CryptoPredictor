@@ -16,6 +16,14 @@ const apiCoinMarket = {
             .then(response => response.data) // response.data.quotes.market_cap
             .catch(error => console.log(error));
 
+    },
+
+    getCoinPrice(symbol) {
+        console.log(symbol)
+        return axios.get(`${this.url}/quotes/latest?symbol=${symbol}`, { 'headers': { 'X-CMC_PRO_API_KEY': process.env.APIKEY } })
+        .then(response => response.data) // response.data.quotes.market_cap
+        .catch(error => console.log(error));
+
     }
 
 }

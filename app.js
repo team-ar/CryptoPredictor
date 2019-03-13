@@ -9,8 +9,17 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
 
+<<<<<<< HEAD
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+=======
+const session      = require('express-session');
+const MongoStore   = require('connect-mongo')(session);
+const Prediction  = require("./models/Prediction")
+const User = require("./models/User")
+const apiCoinMarket = require("./public/javascripts/apiCoinMarket")
+const moment = require("moment")
+>>>>>>> 6eaf672e55eac543cb654df7dc0c3827ca228273
 
 
 
@@ -22,6 +31,35 @@ mongoose
     .catch(err => {
         console.error('Error connecting to mongo', err)
     });
+
+setInterval(() => {
+
+  Prediction.find({})
+  .then(predictions => {
+  predictions.forEach(prediction => {
+    if (moment(prediction.endDate).format("MMM Do YY") === moment(new Date()).format("MMM Do YY") && prediction.status === "live") {
+      apiCoinMarket.getCoinPrice(prediction.cryptocurrency)
+     .then(coin => {
+      console.log(prediction.price)
+      console.log(coin.data[prediction.cryptocurrency].quote.USD.price)
+      if((prediction.price / coin.data[prediction.cryptocurrency].quote.USD.price) <= 1 && (prediction.price / coin.data[prediction.cryptocurrency].quote.USD.price) >= 0.9) {
+        User.findOneAndUpdate({_id:prediction.user},{$inc: {puntuation: 1}})
+        .then(() => {
+          console.log(prediction._id)
+          return Prediction.findOneAndUpdate({_id: prediction._id}, {$set:{status: "dead"}})
+        })
+      } else {
+        console.log("You uck")
+      }
+     })
+    } else {
+      console.log("No data to check")
+    }
+  })
+})
+.catch(err => console.log(err))
+
+}, 100000)
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);

@@ -33,7 +33,9 @@ const cryptocurrency = req.params.symbol
 
 const{prediction, price, startDate, endDate } = req.body
 
-const newPrediction = new Prediction ({cryptocurrency, prediction, price, startDate, endDate})
+const user = req.params.id
+
+const newPrediction = new Prediction ({cryptocurrency, user, prediction, price, startDate, endDate})
 
 newPrediction.save()
   .then(newprediction  => {

@@ -5,7 +5,8 @@ const userSchema = new Schema({
   name: String,
   email: String,
   password: String,
-  predictions: [{ type: Schema.Types.ObjectId, ref: 'Predicition' }]
+  predictions: [{ type: Schema.Types.ObjectId, ref: 'Prediction' }],
+  puntuation: Number
 });
 
 userSchema.set('timestamps', true);

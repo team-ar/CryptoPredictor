@@ -18,9 +18,20 @@
          {{!-- Create a Prediction --}}
 
 {{#if isUserLoggedIn }}
-<a href="/predictions/{{userId}}">Make a Prediction</a>
+
+<a href="/predictions/{{userId._id}}/{{symbol}}">Make a Prediction</a>
+
+
+
+{{#each users}}
+    {{!-- <h2>{{symbol}} Predictions</h2> --}}
+    {{> predictionsPartial this}}
+{{/each}}
+
 {{else}}
+
 <p>Want to create a prediccion? <a id="singup2">Sing Up</a></p>
+
 {{/if}}
 
 
