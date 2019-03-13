@@ -43,7 +43,7 @@ newPrediction.save()
         next()
     })
   })
-  .catch(error      => res.redirect("/"))
+  .catch(error => res.redirect("/"))
 
 
 
