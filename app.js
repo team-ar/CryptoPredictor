@@ -9,17 +9,12 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
 
-<<<<<<< HEAD
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
-=======
 const session      = require('express-session');
 const MongoStore   = require('connect-mongo')(session);
 const Prediction  = require("./models/Prediction")
 const User = require("./models/User")
 const apiCoinMarket = require("./public/javascripts/apiCoinMarket")
 const moment = require("moment")
->>>>>>> 6eaf672e55eac543cb654df7dc0c3827ca228273
 
 
 
