@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const predictionSchema = new Schema({
   cryptocurrency: String,
+  user: { type: Schema.Types.ObjectId, ref: 'User' },
   prediction: { 
     type: String, 
     enum: ['BULL', 'BEAR'],
@@ -19,7 +20,8 @@ const predictionSchema = new Schema({
   endDate: {
     type: Date,
     required: true
-  }
+  },
+  status: {type: String, default: "live"}
 });
 
 predictionSchema.set('timestamps', true);

@@ -1,0 +1,30 @@
+<div>
+    
+
+    <p>Username: {{name}}</p>
+
+    {{#each predictions}}
+        {{> onePredictionPartial this}}
+    {{/each}}
+
+
+{{!-- 
+    {{#each predictions}}
+        <p>{{cryptocurrency}}</p>
+    {{/each}}
+
+    {{#each predictions}}
+        <p>Price: {{price}}</p>
+    {{/each}}
+
+
+    {{#each predictions}}
+        <p>Start Date: {{startDate}}</p>
+    {{/each}}
+
+     {{#each predictions}}
+        <p>End Date: {{endDate}}</p>
+    {{/each}}
+      --}}
+
+</div>
