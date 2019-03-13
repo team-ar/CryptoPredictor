@@ -14,12 +14,13 @@
 
 </section>
 
-<p>Want to create a prediccion? <a id="singup2">Sing Up</a></p>
 
          {{!-- Create a Prediction --}}
 
 {{#if isUserLoggedIn }}
 <a href="/predictions/{{userId}}">Make a Prediction</a>
+{{else}}
+<p>Want to create a prediccion? <a id="singup2">Sing Up</a></p>
 {{/if}}
 
 

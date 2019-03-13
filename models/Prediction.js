@@ -5,11 +5,21 @@ const predictionSchema = new Schema({
   cryptocurrency: String,
   prediction: { 
     type: String, 
-    enum: ['BULL', 'BEAR']
+    enum: ['BULL', 'BEAR'],
+    required: true
   },
-  price: Number,
-  startDate: Date,
-  endDate: Date
+  price: {
+    type: Number,
+    required: true
+  },
+  startDate: {
+    type: Date,
+    required: true
+  },
+  endDate: {
+    type: Date,
+    required: true
+  }
 });
 
 predictionSchema.set('timestamps', true);

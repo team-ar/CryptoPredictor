@@ -10,13 +10,13 @@ const Prediction = require("../models/Prediction");
 
 
 
-router.get("/predictions/:id", (req, res, next) => {
+router.get("/predictions/:id/:symbol", (req, res, next) => {
 
 
   User.findById(req.params.id)
     .then(user => {
       console.log(user)
-      res.render('createCryptoPrediction', {user})})
+      res.render('createCryptoPrediction', {user, symbol:req.params.symbol})})
     
     .catch(err => {
         console.log('Error while finding the user', err)
@@ -27,11 +27,13 @@ router.get("/predictions/:id", (req, res, next) => {
 
 
 
-router.post("/predictions/:id", (req, res, next) => {
+router.post("/predictions/:id/:symbol", (req, res, next) => {
+
+const cryptocurrency = req.params.symbol
 
 const{prediction, price, startDate, endDate } = req.body
 
-const newPrediction = new Prediction ({prediction, price, startDate, endDate})
+const newPrediction = new Prediction ({cryptocurrency, prediction, price, startDate, endDate})
 
 newPrediction.save()
   .then(newprediction  => {
@@ -39,15 +41,22 @@ newPrediction.save()
 
     .then(()=> res.redirect('/'))
     .catch(err => {
-        console.log('Error while updating a place', err)
-        next()
+      console.log('Error while updating a place', err)
+      next()
     })
   })
-  .catch(error      => res.redirect("/"))
+  .catch(error      => {
+    res.render('createCryptoPrediction', {
+      errorMsg: `Please enter all input.`
+    })
+  })
 
 
 
 })
+
+
+
 
 
 
