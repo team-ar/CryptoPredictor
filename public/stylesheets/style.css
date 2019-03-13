@@ -10,6 +10,9 @@ a {
 #signup-box {
   display: none; }
 
+#globalRanking {
+  display: none; }
+
 .nav-bar {
   background: #39383A;
   display: flex;

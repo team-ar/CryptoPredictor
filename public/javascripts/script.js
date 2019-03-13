@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const login = document.getElementById("login")
     const singup = document.getElementById("signup")
+  
         // const singup2 = document.getElementById("singup2")
 
     const loginBox = document.getElementById("login-box")
     const signupBox = document.getElementById("signup-box")
 
-    console.log(login)
 
     if (login !== null) {
 

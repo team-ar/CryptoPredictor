@@ -20,9 +20,9 @@
 
     <ul class="nav-right-side">
       {{#if isUserLoggedIn }}
-      <li>My Rating: 53%</li>
+      <li>My Rating: {{user.puntuation}}</li>
       <li><a href="/globalRanking">Global Ranking</a></li>
-      <li><a href="/profile">{{user.name}}</a></li>
+      <li>Welcome {{user.name}}</li>
       <li><a href="/logout">Log out</a></li>
       {{else}}
       <li><a id="signup">Sign Up</a></li>
@@ -32,78 +32,79 @@
 
   </nav>
 
-      {{!-- CREATE LOGIN-BOX --}}
+{{!-- CREATE LOGIN-BOX --}}
 
-    <div id="login-box">
-      <h2> Log In </h2>
+ <div id="login-box">
+   <h2> Log In </h2>
 
-      {{#if errorMessage}}
-      <p class="error-message">
-        {{ errorMessage }}
-      </p>
-      {{/if}}
+   {{#if errorMessage}}
+   <p class="error-message">
+     {{ errorMessage }}
+   </p>
+   {{/if}}
 
-      <form action="/login" method="post">
-        <div>
-          <label for="email-input"> Email </label>
-          <input type="email" name="email" placeholder="Please enter your e-mail address">
-        </div>
+   <form action="/login" method="post">
+     <div>
+       <label for="email-input"> Email </label>
+       <input type="email" name="email" placeholder="Please enter your e-mail address">
+     </div>
 
-        <div>
-          <label for="password-input">Password</label>
-          <input type="password" name="password" placeholder="••••••••••••">
-        </div>
+     <div>
+       <label for="password-input">Password</label>
+       <input type="password" name="password" placeholder="••••••••••••">
+     </div>
 
-        <button type="submit"> Log In </button>
-      </form>
+     <button type="submit"> Log In </button>
+   </form>
 
-      <p>
-        Don't have an account?
-        <a href="/signup">
-          Create an account.
-        </a>
-      </p>
+   <p>
+     Don't have an account?
+     <a href="/signup">
+       Create an account.
+     </a>
+   </p>
 
-    </div>
+ </div>
 
-    {{!-- CREATE SIGNUP-BOX --}}
+ {{!-- CREATE SIGNUP-BOX --}}
 
-    <div id="signup-box">
+ <div id="signup-box">
 
-      <h2> Sign Up </h2>
+   <h2> Sign Up </h2>
 
-      {{#if errorMessage}}
-      <p class="error-message">
-        {{ errorMessage }}
-      </p>
-      {{/if}}
+   {{#if errorMessage}}
+   <p class="error-message">
+     {{ errorMessage }}
+   </p>
+   {{/if}}
 
-      <form action="/signup" method="post">
-        <div>
-          <label for="name-input">Name</label>
-          <input type="text" name="name" placeholder="Please enter your name">
-        </div>
+   <form action="/signup" method="post">
+     <div>
+       <label for="name-input">Name</label>
+       <input type="text" name="name" placeholder="Please enter your name">
+     </div>
 
-        <div>
-          <label for="email-input">Email</label>
-          <input type="email" name="email" placeholder="Please enter your e-mail address">
-        </div>
+     <div>
+       <label for="email-input">Email</label>
+       <input type="email" name="email" placeholder="Please enter your e-mail address">
+     </div>
 
-        <div>
-          <label for="password-input">Password</label>
-          <input type="password" name="password" placeholder="••••••••••••">
-        </div>
+     <div>
+       <label for="password-input">Password</label>
+       <input type="password" name="password" placeholder="••••••••••••">
+     </div>
 
-        <button>Create New Account</button>
-      </form>
+     <button>Create New Account</button>
+   </form>
 
-      {{!-- <p>
-        Already have an account?
-        <a href="/login">
-          Log in.
-        </a>
-      </p> --}}
-    </div>
+   {{!-- <p>
+       Already have an account?
+       <a href="/login">
+         Log in.
+       </a>
+     </p> --}}
+ </div>
+  
 
   {{{body}}}
 
@@ -116,3 +117,5 @@
 </body>
 
 </html>
+
+

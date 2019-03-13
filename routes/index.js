@@ -12,8 +12,26 @@ router.get('/', (req, res, next) => {
 
     .then(marketCoins => {
         const marketCoins20 = marketCoins.data.slice(0, 20)
+        const volumeBtc = parseInt(marketCoins20[0].quote.USD.market_cap)
+    
+        marketCoins20.forEach((coin, idx) => {
+            // console.log(idx)
+            if(coin.symbol === "BTC") {
+                coin.dimension = 1
+                coin.width = 50
+                coin.height = 50
+            }
+            else {
+                const volumeCoin = parseInt(marketCoins20[idx].quote.USD.market_cap)
+                const dimension = volumeCoin / volumeBtc
+                coin.dimension = dimension * 8
+                coin.width = 50 * dimension 
+                coin.height = 50 * dimension
+            }
+            
+        });
 
-        // console.log(marketCoins20)
+        console.log(marketCoins20)
         res.render('index', { coins: marketCoins20 });   
     })
 

@@ -9,18 +9,19 @@ const User = require("../models/User");
 
 router.get("/", (req, res) => {
 
+    User.find({})
+    .then(users => {
+      console.log(users)
+      res.render('globalRanking', {users})})
+    
+    .catch(err => console.log('Error while finding the user', err))
 
-    const id = req.params.id
+})
 
-    console.log(id)
+router.post("/", (req, res) => {
 
-    apiCoinMarket.getOneCoin(id)
-        .then(marketCoin => {
-            // res.json(marketCoin.data[id])
-            // res.json(marketCoin)
-            // res.render('cryptocurrency', { coins: JSON.stringify(marketCoin.Data), symbol: id });
-            res.render('globalRanking', { coins: JSON.stringify(marketCoin.Data), symbol: id, userId: req.session.currentUser !== undefined ? req.session.currentUser._id : "notLoggin" });
-        })
+
+
 
 })
 
