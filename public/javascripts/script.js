@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     singup.onclick = singupEvent
     singup2.onclick = singupEvent
 
+
+
 }, false);
 
 
