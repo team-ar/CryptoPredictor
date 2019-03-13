@@ -20,8 +20,9 @@
 
     <ul class="nav-right-side">
       {{#if isUserLoggedIn }}
-      <li><a href="/profile">Profile</a></li>
-      <li><a href="/predictions">Predictions</a></li>
+      <li>My Rating: 53%</li>
+      <li><a href="/globalRanking">Global Ranking</a></li>
+      <li><a href="/profile">{{user.name}}</a></li>
       <li><a href="/logout">Log out</a></li>
       {{else}}
       <li><a id="signup">Sign Up</a></li>
@@ -96,12 +97,12 @@
         <button>Create New Account</button>
       </form>
 
-      <p>
+      {{!-- <p>
         Already have an account?
         <a href="/login">
           Log in.
         </a>
-      </p>
+      </p> --}}
     </div>
 
   {{{body}}}

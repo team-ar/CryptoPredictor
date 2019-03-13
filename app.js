@@ -1,27 +1,27 @@
 require('dotenv').config();
 
-const bodyParser   = require('body-parser');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const express      = require('express');
-const favicon      = require('serve-favicon');
-const hbs          = require('hbs');
-const mongoose     = require('mongoose');
-const logger       = require('morgan');
-const path         = require('path');
+const express = require('express');
+const favicon = require('serve-favicon');
+const hbs = require('hbs');
+const mongoose = require('mongoose');
+const logger = require('morgan');
+const path = require('path');
 
-const session      = require('express-session');
-const MongoStore   = require('connect-mongo')(session);
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 
 
 mongoose
-  .connect(process.env.DB, {useNewUrlParser: true})
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err)
-  });
+    .connect(process.env.DB, { useNewUrlParser: true })
+    .then(x => {
+        console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+    })
+    .catch(err => {
+        console.error('Error connecting to mongo', err)
+    });
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
@@ -37,35 +37,35 @@ app.use(cookieParser());
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
-  src:  path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  sourceMap: true
+    src: path.join(__dirname, 'public'),
+    dest: path.join(__dirname, 'public'),
+    sourceMap: true
 }));
 
 // Middleware gestión de sesión
 app.use(session({
-  secret: 'personal secret',
-  resave: true,
-  saveUninitialized: true,
-  cookie: { maxAge: 60000 },
-  store: new MongoStore({
-    mongooseConnection: mongoose.connection,
-    ttl: 24 * 60 * 60 // 1 day
-  })
+    secret: 'personal secret',
+    resave: true,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 },
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        ttl: 24 * 60 * 60 // 1 day
+    })
 }));
 
 
 app.use((req, res, next) => {
-  
-  if (req.session.currentUser) {
-    res.locals.currentUserInfo = req.session.currentUser;
-    res.locals.isUserLoggedIn = true;
-  } else {
-    res.locals.isUserLoggedIn = false;
-  }
-  next();
+
+    if (req.session.currentUser) {
+        res.locals.currentUserInfo = req.session.currentUser;
+        res.locals.isUserLoggedIn = true;
+    } else {
+        res.locals.isUserLoggedIn = false;
+    }
+    next();
 });
-      
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -78,7 +78,10 @@ hbs.registerPartials(__dirname + '/views/partials')
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
-
+app.use((req, res, next) => {
+    app.locals.user = req.session.currentUser;
+    next();
+})
 
 
 const index = require('./routes/index');
@@ -90,5 +93,7 @@ app.use('/', authRoutes);
 const predictions = require('./routes/predictions');
 app.use('/', predictions);
 
+const globalRanking = require('./routes/globalRanking');
+app.use('/globalRanking', globalRanking);
 
 module.exports = app;

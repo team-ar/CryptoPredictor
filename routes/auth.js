@@ -14,24 +14,24 @@ const bcryptSalt = 10;
 // Registrar datos formulario SIGNUP
 router.post("/signup", (req, res, next) => {
 
-  const { name, email, password } = req.body
+    const { name, email, password } = req.body
 
-  if (name.length === 0 || password.length === 0) {
+    if (name.length === 0 || password.length === 0) {
 
-    res.render('auth/signup', { errorMsg: 'Enter both email and password to sign up.' })
-    return
-  }
+        res.render('index', { errorMsg: 'Enter both email and password to sign up.' })
+        return
+    }
 
-  User.findOne({ email }, `_id` )
+    User.findOne({ email }, `_id`)
 
     .then(userEmail => {
 
-      if (userEmail !== null) {
-        res.render("auth/signup", {
-          errorMsg: `The email ${email} is already in use.`
-        })
-        return
-      }
+        if (userEmail !== null) {
+            res.render("index", {
+                errorMsg: `The email ${email} is already in use.`
+            })
+            return
+        }
     })
 
     const salt = bcrypt.genSaltSync(bcryptSalt);
@@ -39,14 +39,14 @@ router.post("/signup", (req, res, next) => {
 
     User.create({ name, email, password: hashPass })
 
-      .then(() => res.redirect("/"))
-      .catch(error => {
+    .then(() => res.redirect("/"))
+        .catch(error => {
 
-        res.render("auth/signup", {errorMsg: 'Something went wrong. Try again later.'})
-        console.log(error)
-      
-      })
-      
+            res.render("index", { errorMsg: 'Something went wrong. Try again later.' })
+            console.log(error)
+
+        })
+
 })
 
 
@@ -57,49 +57,49 @@ router.post("/signup", (req, res, next) => {
 
 router.post("/login", (req, res, next) => {
 
-  console.log(req.body)
+    console.log(req.body)
 
-  const theEmail = req.body.email;
-  const thePassword = req.body.password;
+    const theEmail = req.body.email;
+    const thePassword = req.body.password;
 
-  if (theEmail === "" || thePassword === "") {
-      res.render("auth/login", {
-          errorMsg: "Please enter both, username and password to sign up."
-      });
-      return;
-  }
-  
-
-  User.findOne({ "email": theEmail })
-  .then(theUser => {
-      if (!theUser) {
-        res.render("auth/login", {
-          errorMsg: `There isn't an account with email ${theEmail}.`
-        })
-        return
-      }
-      if (bcrypt.compareSync(thePassword, theUser.password)) {
-        // Save the login in the session!
-        req.session.currentUser = theUser;
-        res.redirect("/");
-      } else {
-        res.render("auth/login", {
-          errorMsg: "Incorrect password"
+    if (theEmail === "" || thePassword === "") {
+        res.render("index", {
+            errorMsg: "Please enter both, username and password to sign up."
         });
-      }
-  })
-  .catch(error => next(error))
+        return;
+    }
 
-  
+
+    User.findOne({ "email": theEmail })
+        .then(theUser => {
+            if (!theUser) {
+                res.render("index", {
+                    errorMsg: `There isn't an account with email ${theEmail}.`
+                })
+                return
+            }
+            if (bcrypt.compareSync(thePassword, theUser.password)) {
+                // Save the login in the session!
+                req.session.currentUser = theUser;
+                res.redirect("/");
+            } else {
+                res.render("index", {
+                    errorMsg: "Incorrect password"
+                });
+            }
+        })
+        .catch(error => next(error))
+
+
 });
 
 
 //LOGOUT
 
 router.get("/logout", (req, res) => {
-  req.session.destroy((err) => {
-    res.redirect("/");
-  });
+    req.session.destroy((err) => {
+        res.redirect("/");
+    });
 });
 
 

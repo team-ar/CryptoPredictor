@@ -5,6 +5,7 @@ const User = require("../models/User");
 
 
 /* GET home page */
+
 router.get('/', (req, res, next) => {
 
     apiCoinMarket.getAllCoins()
@@ -18,7 +19,7 @@ router.get('/', (req, res, next) => {
     })
 });
 
-
+/* GET Cryptocurrency page */
 
 router.get("/coin/:id", (req, res) => {
 
@@ -34,6 +35,8 @@ router.get("/coin/:id", (req, res) => {
         })
 
 })
+
+
 
 
 
