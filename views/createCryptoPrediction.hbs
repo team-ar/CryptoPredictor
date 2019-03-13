@@ -1,22 +1,33 @@
-<form action="/predictions/{{user.id}}" method="POST">
-  <h2>Create a prediction</h2>
+
+<form action="/predictions/{{user.id}}/{{symbol}}" method="POST" id="predict">
+  <h2>{{symbol}}</h2>
+  <p>Create a prediction</p>
 
   <label for="prediction">Predict market</label>
-  <input type="text" name="prediction" placeholder="BULL/BEAR" required>
+  <input type="text" name="prediction" placeholder="BULL/BEAR">
 
   <label for="price">Predict price</label>
-  <input type="price" name="price" placeholder="Introduce USD value" required>
+  <input type="price" name="price" placeholder="Introduce USD value">
 
   <label for="startDate">Start Date</label>
-  <input type="date" name="startDate" placeholder="Start date" required>
+  <input type="date" name="startDate" id="startDate" placeholder="Start date">
 
   <label for="endDate">End Date</label>
-  <input type="date" name="endDate" placeholder="endDate" required>
+  <input type="date" name="endDate" id="endDate" placeholder="endDate">
 
   <button> Create New Prediction </button>
 
   {{#if errorMsg }}
-    <div class="error-message">{{ errorMsg }}</div>
+  <div class="error-message">{{ errorMsg }}</div>
   {{/if}}
- 
+
 </form>
+
+<script>
+
+  let today = moment(new Date()).format("YYYY-MM-DD")
+
+  document.getElementById("startDate").value = today
+  document.getElementById("endDate").value = moment(new Date()).add(1, "week").format("YYYY-MM-DD")
+  
+</script>

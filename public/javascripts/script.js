@@ -3,27 +3,42 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const login = document.getElementById("login")
-  const singup = document.getElementById("signup")
-  const singup2 = document.getElementById("singup2")
-
+    const login = document.getElementById("login")
+    const singup = document.getElementById("signup")
+    // const singup2 = document.getElementById("singup2")
+ 
     const loginBox = document.getElementById("login-box")
     const signupBox = document.getElementById("signup-box")
 
-  login.onclick = e => {
-      if (loginBox.style.display === "block") loginBox.style.display = "none"
-      else loginBox.style.display = "block"
+    console.log(login)
 
-      signupBox.style.display = "none"
-  }
+    if (login !== null){
+
+        login.onclick = e => {
+            if (loginBox.style.display === "block") loginBox.style.display = "none"
+            else loginBox.style.display = "block"
+     
+            signupBox.style.display = "none"
+        }
+    }
+ 
+ 
+ 
+    const singupEvent = e => {
+        if (signupBox.style.display === "block") signupBox.style.display = "none"
+        else signupBox.style.display = "block"
+ 
+        loginBox.style.display = "none"
+    }
+
+    if (singup !== null) {
+
+        singup.onclick = singupEvent
+    }
+ 
+    // singup2.onclick = singupEvent
 
 
-  const singupEvent = e => {
-      if (signupBox.style.display === "block") signupBox.style.display = "none"
-      else signupBox.style.display = "block"
-
-      loginBox.style.display = "none"
-  }
 
   singup.onclick = singupEvent
   singup2.onclick = singupEvent
