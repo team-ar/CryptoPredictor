@@ -9,9 +9,9 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
 
-const session      = require('express-session');
-const MongoStore   = require('connect-mongo')(session);
-const Prediction  = require("./models/Prediction")
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const Prediction = require("./models/Prediction")
 const User = require("./models/User")
 const apiCoinMarket = require("./public/javascripts/apiCoinMarket")
 const moment = require("moment")
@@ -19,7 +19,7 @@ const moment = require("moment")
 
 
 mongoose
-    .connect(process.env.DBURL, { useNewUrlParser: true })
+    .connect(process.env.DB, { useNewUrlParser: true })
     .then(x => {
         console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
     })
