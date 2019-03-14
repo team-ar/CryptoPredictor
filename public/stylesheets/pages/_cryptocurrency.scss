@@ -1,0 +1,25 @@
+body {
+    background-color: #474546;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.crypto-name h1 {
+    font-size: 30px;
+    padding: 15px 15px 2px 15px;
+}
+
+.crypto-name p {
+    font-size: 20px;
+    padding: 2px 15px 15px 15px;
+    font-weight: bold;
+}
+
+.canvas {
+    padding: 40px;
+}
+
+.create-prediction {
+    text-align: center;
+    padding: 20px;
+}

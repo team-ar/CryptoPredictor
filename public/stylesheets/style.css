@@ -216,7 +216,6 @@ footer {
 
 footer {
   padding: 5px 20px;
-  position: fixed;
   bottom: 0;
   width: 100vw; }
 
@@ -288,5 +287,26 @@ footer {
   grid-template-columns: 50px 50px 50px 50px;
   grid-template-rows: auto;
   border: 1px solid red; }
+
+body {
+  background-color: #474546;
+  color: white;
+  font-family: 'Roboto', sans-serif; }
+
+.crypto-name h1 {
+  font-size: 30px;
+  padding: 15px 15px 2px 15px; }
+
+.crypto-name p {
+  font-size: 20px;
+  padding: 2px 15px 15px 15px;
+  font-weight: bold; }
+
+.canvas {
+  padding: 40px; }
+
+.create-prediction {
+  text-align: center;
+  padding: 20px; }
 
 /*# sourceMappingURL=style.css.map */
