@@ -17,21 +17,30 @@ router.get('/', (req, res, next) => {
         marketCoins20.forEach((coin, idx) => {
             // console.log(idx)
             if(coin.symbol === "BTC") {
+                if(coin.quote.USD.percent_change_24h >= 0 ) coin.color = "#FF9595"
+                else coin.color = "#439595"
                 coin.dimension = 1
-                coin.width = 50
-                coin.height = 50
+                coin.width = 400
+                coin.height = 500
             }
             else {
+                if(coin.quote.USD.percent_change_24h >= 0 ) coin.color = "#FF9595"
+                else coin.color = "#439595"
                 const volumeCoin = parseInt(marketCoins20[idx].quote.USD.market_cap)
                 const dimension = volumeCoin / volumeBtc
                 coin.dimension = dimension * 8
-                coin.width = 50 * dimension 
-                coin.height = 50 * dimension
+                coin.width = 400 * dimension 
+                coin.height = 500 * dimension
+
+                if (coin.width < 25) {
+                    coin.width = 25
+                    coin.height = 25
+                }
             }
             
         });
 
-        console.log(marketCoins20)
+        // console.log(marketCoins20)
         res.render('index', { coins: marketCoins20 });   
     })
 

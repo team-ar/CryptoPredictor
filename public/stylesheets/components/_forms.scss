@@ -1,0 +1,73 @@
+$flex-positioning: flex;
+$flex-direction: column;
+
+
+#login-box {
+  width: 400px;
+  height: 100%;
+  text-align: center;
+  // padding-top: 100px;
+  position: absolute;
+  left: 0;
+  
+  animation-name: mySlidein;
+  animation-duration: 1s;
+}
+
+.login-box-container {
+  margin: 0 auto;
+  text-align: center;
+  background: red;
+}
+
+
+.login-email {
+  display: $flex-positioning;
+  flex-direction: $flex-direction;
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+  }
+}
+
+.login-pwd {
+  display: $flex-positioning;
+  flex-direction: $flex-direction;
+  margin-bottom: 10px;
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+  }
+}
+
+@keyframes myslidein {
+  0% {
+    position: absolute;
+  }
+
+  50% {
+    position: relative;
+    top: 400px;
+  }
+
+
+  100% {
+    transform: scale(1.8);
+    margin-left: 800px;
+  }
+}
+
+
+
