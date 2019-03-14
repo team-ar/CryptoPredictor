@@ -1,10 +1,13 @@
-<div class="crypto-cards" style='background-color:{{color}}; width:{{width}}px; height:{{height}}px'>
 
-  {{!-- <p>{{symbol}}</p>
-  <p>{{quote.USD.price}}</p>
-  <p>{{quote.USD.percent_change_24h}}</p>
-  <a href='/coin/{{symbol}}'>View more</a> --}}
 
-</div>
+  <a href="/coin/{{symbol}}" class="crypto-cards" style='background-color:{{color}};grid-column: {{gridColumn}};grid-row: {{gridRow}}'>
 
-{{!-- style='width:{{width}}px height:{{height}}px --}}
+    <h2 style="font-size: {{fontSize}}px">{{symbol}}</h2>
+    <p class="price" style="font-size: {{fontSizePrice}}px">${{quote.USD.price}}</p>
+    <p class="percentage" style="font-size: {{fontSizeChange}}px">{{quote.USD.percent_change_24h}}%</p>
+    {{!-- <a href='/coin/{{symbol}}'>View more</a> --}}
+
+  </a>
+
+
+

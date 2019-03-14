@@ -12,9 +12,11 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP" rel="stylesheet">
   {{!-- Stylesheets --}}
-  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+  {{!-- <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" /> --}}
   <link rel="stylesheet" href="/stylesheets/style.css" />
   {{!-- Ajax --}}
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 </head>
@@ -39,7 +41,7 @@
 
   {{!-- CREATE LOGIN-BOX --}}
 
-  <div id="login-box" >
+  <div id="login-box" class="login-visible">
 
     <div class="login-box-container">
       <h2>Log in</h2>
