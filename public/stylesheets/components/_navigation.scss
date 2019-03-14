@@ -11,12 +11,22 @@
     align-items: center;
 }
 
-.nav-right-side {    
+.nav-right-side {
     li {
         margin-right: 20px;
     }
 }
 
+.logo img {
+    height: 40px;
+    // display: flex;
+    align-items: center;
+    // display: inline-block;
+    float: left;
+}
 
-
-
+.name {
+    // justify-self: flex-start;
+    margin-left: 20px;
+    display: inline-block;
+}

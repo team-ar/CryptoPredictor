@@ -131,13 +131,11 @@ table {
 body {
   font: 14px 'Roboto', sans-serif;
   overflow-x: hidden;
-  background: #474546;
+  background: #192125;
   color: #FFFFFF; }
 
 a {
   color: #FFFFFF; }
-  a :hover {
-    color: #FFFFFF; }
 
 h3 {
   font-family: 'Kanit', sans-serif;
@@ -147,12 +145,12 @@ h3 {
   font-family: 'Nunito', sans-serif;
   color: #FFFFFF;
   font-size: 1.2rem;
-  background: #39383A; }
+  background: #1F292D; }
 
 footer {
   font-family: 'Noto Serif JP', serif;
   color: #FFFFFF;
-  background: #39383A; }
+  background: #1F292D; }
 
 .global-ranking {
   color: #FFFFFF;
@@ -267,6 +265,15 @@ footer {
 
 .nav-right-side li {
   margin-right: 20px; }
+
+.logo img {
+  height: 40px;
+  align-items: center;
+  float: left; }
+
+.name {
+  margin-left: 20px;
+  display: inline-block; }
 
 .login-btn {
   width: 80%;
@@ -419,7 +426,7 @@ footer {
   padding: 2px 15px 15px 15px; }
 
 .canvas {
-  padding: 40px; }
+  padding: 15px; }
 
 .create-prediction {
   text-align: center;
