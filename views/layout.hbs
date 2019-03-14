@@ -42,7 +42,7 @@
 
   {{!-- CREATE LOGIN-BOX --}}
 
-  <div id="login-box" class="login-visible">
+  <div id="login-box">
 
     <div class="login-box-container">
       <h2>Log in</h2>
@@ -79,34 +79,40 @@
 
   {{!-- CREATE SIGNUP-BOX --}}
 
-  <div id="signup-box">
+  <div id="signup-box" >
 
-    <h2>Sign up</h2>
+    <div class="signup-box-container">
 
-    {{#if errorMessage}}
-    <p class="error-message">
-      {{ errorMessage }}
-    </p>
-    {{/if}}
+        <h2>Sign up</h2>
 
-    <form action="/signup" method="post">
-      <div>
-        <label for="name-input"></label>
-        <input type="text" name="name" placeholder="Name">
-      </div>
+        {{#if errorMessage}}
+        <p class="error-message">
+          {{ errorMessage }}
+        </p>
+        {{/if}}
 
-      <div class="login-email">
-        <label for="email-input"></label>
-        <input type="email" name="email" placeholder="Email">
-      </div>
+        <form action="/signup" method="post">
 
-      <div class="login-pwd">
-        <label for="password-input">Password</label>
-        <input type="password" name="password" placeholder="Password">
-      </div>
+          <div class="signup-name">
+            <label for="name-input"></label>
+            <input type="text" name="name" placeholder="Name">
+          </div>
 
-      <button>Create New Account</button>
-    </form>
+          <div class="signup-email">
+            <label for="email-input"></label>
+            <input type="email" name="email" placeholder="Email">
+          </div>
+
+          <div class="signup-pwd">
+            <label for="password-input"></label>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+
+          <button class="signup-btn" type="submit">Create New Account</button>
+        </form>
+
+    </div>
+
 
     {{!-- <p>
       Already have an account?

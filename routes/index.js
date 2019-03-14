@@ -23,8 +23,8 @@ router.get('/', (req, res, next) => {
                 coin.width = 400
                 coin.height = 500
                 coin.fontSize = coin.dimension * 200
-                coin.fontSizePrice = 50
-                coin.fontSizeChange = 30
+                coin.fontSizePrice = 60
+                coin.fontSizeChange = 40
                 coin.gridColumn = `span 6`
                 coin.gridRow = `span 8`
             }
@@ -40,18 +40,23 @@ router.get('/', (req, res, next) => {
                 if(coin.dimension >= 0.04 && coin.dimension <= 0.15) {
                     coin.gridColumn = `span 1`
                     coin.gridRow = `span 2`
-                    coin.fontSize = 30
+                    coin.fontSize = 35
+                    coin.fontSizePrice = 25
+                    coin.fontSizeChange = 15
 
                 } else if (coin.dimension > 0.15 && coin.dimension <= 0.24) {
                     coin.gridColumn = `span 2`
                     coin.gridRow = `span 1`
                     coin.fontSize = 35
+                    coin.fontSizePrice = 25
+                    coin.fontSizeChange = 15
 
                 } else if (coin.dimension > 0.24) {
                     coin.gridColumn = `span 2`
                     coin.gridRow = `span 2`
                     coin.fontSize = 40
-
+                    coin.fontSizePrice = 30
+                    coin.fontSizeChange = 25
                 }
 
 
@@ -63,7 +68,7 @@ router.get('/', (req, res, next) => {
             
         });
 
-        console.log(marketCoins20)
+        // console.log(marketCoins20)
 
         marketCoins20.map(coin => {
             coin.quote.USD.price=parseFloat(coin.quote.USD.price).toFixed(2)

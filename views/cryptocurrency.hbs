@@ -33,7 +33,7 @@
 
 {{else}}
 
-<p>Want to create a prediccion? <a id="singup2">Sing Up</a></p>
+<p>Want to create a prediccion?</p> <a id="signup2">Sing Up</a>
 
 {{/if}}
 
@@ -59,8 +59,8 @@
   let coins = {{{ coins }}}
   coins.forEach(coin => {
     let time = moment.utc(coin.time * 1000)
-    console.log(time)
-    arrayCoinPrice.push({ x: coin.time * 1000, y: [coin.open, coin.high, coin.low, coin.close] })
+    //console.log(time)
+    arrayCoinPrice.push({ x: new Date(moment(coin.time * 1000).format("DD MMMM YYYY")), y: [coin.open, coin.high, coin.low, coin.close] })
   })
 
   coins.forEach(coin => arrayDayPrice.push(moment(coin.time * 1000).format("MMM Do YYYY")))
@@ -132,7 +132,7 @@
       showInLegend: true,
       name: "Stock Price",
       yValueFormatString: "$#,##0.00",
-      xValueFormatString: "MMMM",
+      xValueFormatString: "DD MMMM YYYY",
       dataPoints: arrayCoinPrice
     }]
   });

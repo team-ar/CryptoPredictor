@@ -5,7 +5,23 @@
   height: calc(100vh - 55px - 30px);
   grid-column-gap: 6px;
   grid-row-gap: 3px;
-  z-index: 40;
+  z-index: 30;
+}
+
+.crypto-cards {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-decoration: none;
+
+
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+  
 }
 
 

@@ -1,6 +1,7 @@
 $flex-positioning: flex;
 $flex-direction: column;
 
+//LOGIN
 
 #login-box {
   display: block;
@@ -14,12 +15,9 @@ $flex-direction: column;
   transition-duration: 1s;
   display: flex;
   align-items: center;
+  z-index: 50;
 }
 
-
-// .login-position {
-//   transition: transform 0.5s ease;
-// }
 
 .login-box-container {
   margin: 0 auto;
@@ -43,6 +41,77 @@ $flex-direction: column;
 }
 
 .login-pwd {
+  display: $flex-positioning;
+  flex-direction: $flex-direction;
+  margin-bottom: 10px;
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+  }
+}
+
+//SIGNUP
+
+
+#signup-box {
+  display: block;
+  width: 400px;
+  height: calc(100% - 55px - 30px);
+  text-align: center;
+  // padding-top: 100px;
+  position: absolute;
+  right: -400px;
+  top: 55px;
+  transition-duration: 1s;
+  display: flex;
+  align-items: center;
+  z-index: 50;
+}
+
+
+.signup-box-container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.signup-name {
+  display: $flex-positioning;
+  flex-direction: $flex-direction;
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+  }
+}
+
+
+.signup-email {
+  display: $flex-positioning;
+  flex-direction: $flex-direction;
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+  }
+}
+
+.signup-pwd {
   display: $flex-positioning;
   flex-direction: $flex-direction;
   margin-bottom: 10px;
