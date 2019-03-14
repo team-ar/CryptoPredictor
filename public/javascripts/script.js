@@ -11,6 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginBox = document.getElementById("login-box")
     const signupBox = document.getElementById("signup-box")
 
+    // const cryptoCards = document.getElementsByClassName("crypto-cards")
+    // console.log(cryptoCards)
+    // cryptoCards.forEach(crypto => {
+    //     console.log("hola")
+    //     crypto.style.display = "inline-block"
+    // });
+
 
     if (login !== null) {
 

@@ -5,9 +5,19 @@
 @import 'components/links';
 @import 'components/navigation';
 @import 'components/buttons';
+@import 'components/footer';
+@import 'components/forms';
+
+
 
 // LAYOUT
 @import 'layout/loginBox';
 @import 'layout/singupBox';
 // VENDORS
-@import 'vendors/bootstrap.min.css'
+@import 'vendors/bootstrap.min.css';
+
+// PAGES
+@import 'pages/globalRanking';
+@import 'pages/index';
+
+
