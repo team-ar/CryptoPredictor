@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 @import url(vendors/bootstrap.min.css);
 html,
 body,
@@ -85,17 +84,14 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-
 article,
 aside,
 details,
@@ -107,271 +103,218 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
-}
+  display: block; }
 
 body {
-    line-height: 1;
-}
+  line-height: 1; }
 
 ol,
 ul {
-    list-style: none;
-}
+  list-style: none; }
 
 blockquote,
 q {
-    quotes: none;
-}
+  quotes: none; }
 
-blockquote:before,
-blockquote:after {
-    content: '';
-    content: none;
-}
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
 
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
+q:before, q:after {
+  content: '';
+  content: none; }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
+  border-collapse: collapse;
+  border-spacing: 0; }
 
 body {
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    overflow-x: hidden;
-    background: black;
-}
+  font: 14px 'Roboto', sans-serif;
+  overflow-x: hidden;
+  background: #192125;
+  color: #FFFFFF; }
 
 a {
-    color: #FFFFFF;
-}
+  color: #FFFFFF; }
 
 h3 {
-    font-family: 'Kanit', sans-serif;
-    font-size: 1.5rem;
-}
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.5rem; }
 
 .nav-bar {
-    font-family: 'Nunito', sans-serif;
-    color: #FFFFFF;
-    font-size: 1.2rem;
-    background: #39383A;
-}
+  font-family: 'Nunito', sans-serif;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  background: #1F292D; }
 
 footer {
-    font-family: 'Noto Serif JP', serif;
-    color: #FFFFFF;
-    background: #39383A;
-}
+  font-family: 'Noto Serif JP', serif;
+  color: #FFFFFF;
+  background: #1F292D; }
 
 .global-ranking {
-    color: #FFFFFF;
-    background: rgba(0, 0, 0, 0.76);
-}
-
-.global-ranking h2 {
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.76); }
+  .global-ranking h2 {
     font-family: 'Nunito', sans-serif;
-    font-size: 1.5rem;
-}
-
-.global-ranking p {
-    font-size: 1.2rem;
-}
+    font-size: 1.5rem; }
+  .global-ranking p {
+    font-size: 1.2rem; }
 
 #login-box {
-    font-family: 'Nunito', sans-serif;
-    color: #FFFFFF;
-    background: rgba(0, 0, 0, 0.6);
-}
-
-#login-box h2 {
+  font-family: 'Nunito', sans-serif;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.6); }
+  #login-box h2 {
     font-size: 2rem;
-    font-family: 'Nunito', sans-serif;
-}
+    font-family: 'Nunito', sans-serif; }
 
 .login-email label {
-    font-size: 1.1rem;
-}
+  font-size: 1.1rem; }
 
 .login-email input {
-    background: rgba(250, 250, 250, 0.15);
-}
-
-.login-email input :hover {
-    background: rgba(21, 21, 21, 0.15);
-}
+  background: rgba(250, 250, 250, 0.15); }
+  .login-email input :hover {
+    background: rgba(21, 21, 21, 0.15); }
 
 .login-email ::placeholder {
-    color: #cccccc;
-}
+  color: #cccccc; }
 
 .login-pwd label {
-    font-size: 1.1rem;
-}
+  font-size: 1.1rem; }
 
 .login-pwd input {
-    background: rgba(250, 250, 250, 0.15);
-}
-
-.login-pwd input :hover {
-    background: rgba(21, 21, 21, 0.15);
-}
+  background: rgba(250, 250, 250, 0.15); }
+  .login-pwd input :hover {
+    background: rgba(21, 21, 21, 0.15); }
 
 .login-pwd ::placeholder {
-    color: #cccccc;
-}
+  color: #cccccc; }
 
 .login-btn {
-    background: rgba(250, 250, 250, 0.8);
-    font-size: 1.1rem;
-    mix-blend-mode: screen;
-}
+  background: rgba(250, 250, 250, 0.8);
+  font-size: 1.1rem;
+  mix-blend-mode: screen; }
 
 .crypto-cards h2 {
-    font-size: 5rem;
-    font-family: 'Nunito', sans-serif;
-}
-
-.nav-bar {
-    padding: 10px 0px 10px 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-right-side {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-right-side li {
-    margin-right: 20px;
-}
-
-.login-btn {
-    width: 80%;
-    margin: 0 auto 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-}
-
-footer {
-    padding: 5px 20px;
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-}
-
-#login-box {
-    display: block;
-    width: 400px;
-    height: calc(100% - 55px - 30px);
-    text-align: center;
-    position: absolute;
-    right: -400px;
-    top: 55px;
-    transition-duration: 1s;
-    display: flex;
-    align-items: center;
-}
-
-.login-box-container {
-    margin: 0 auto;
-    width: 100%;
-}
-
-.login-email {
-    display: flex;
-    flex-direction: column;
-}
-
-.login-email label {
-    margin-bottom: 10px;
-}
-
-.login-email input {
-    width: 80%;
-    margin: 0 auto 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-}
-
-.login-pwd {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-.login-pwd label {
-    margin-bottom: 10px;
-}
-
-.login-pwd input {
-    width: 80%;
-    margin: 0 auto 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-}
-
-#signup-box {
-    display: none;
-}
-
-.global-ranking {
-    text-align: center;
-    margin: 0 auto;
-    padding: 50px 0;
-    height: 100vh;
-}
-
-.global-ranking h2 {
-    margin-bottom: 20px;
-}
-
-.crypto-container {
-    display: grid;
-    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-    height: calc(100vh - 55px - 30px);
-    grid-column-gap: 6px;
-    grid-row-gap: 3px;
-    z-index: 40;
-}
-
-body {
-    background-color: #474546;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-}
+  font-size: 5rem;
+  font-family: 'Nunito', sans-serif; }
 
 .crypto-name h1 {
-    font-size: 30px;
-    padding: 15px 15px 2px 15px;
-}
+  font-size: 30px; }
 
 .crypto-name p {
-    font-size: 20px;
-    padding: 2px 15px 15px 15px;
-    font-weight: bold;
-}
+  font-size: 20px;
+  font-weight: bold; }
+
+.nav-bar {
+  padding: 10px 0px 10px 20px;
+  display: flex;
+  justify-content: space-between; }
+
+.nav-right-side {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.nav-right-side li {
+  margin-right: 20px; }
+
+.logo img {
+  height: 40px;
+  align-items: center;
+  float: left; }
+
+.name {
+  margin-left: 20px;
+  display: inline-block; }
+
+.login-btn {
+  width: 80%;
+  margin: 0 auto 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; }
+
+footer {
+  padding: 5px 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100vw; }
+
+#login-box {
+  display: block;
+  width: 400px;
+  height: calc(100% - 55px - 30px);
+  text-align: center;
+  position: absolute;
+  right: -400px;
+  top: 55px;
+  transition-duration: 1s;
+  display: flex;
+  align-items: center; }
+
+.login-box-container {
+  margin: 0 auto;
+  width: 100%; }
+
+.login-email {
+  display: flex;
+  flex-direction: column; }
+  .login-email label {
+    margin-bottom: 10px; }
+  .login-email input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none; }
+
+.login-pwd {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px; }
+  .login-pwd label {
+    margin-bottom: 10px; }
+  .login-pwd input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none; }
+
+#signup-box {
+  display: none; }
+
+.global-ranking {
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px 0;
+  height: 100vh; }
+  .global-ranking h2 {
+    margin-bottom: 20px; }
+
+.crypto-container {
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  height: calc(100vh - 55px - 30px);
+  grid-column-gap: 6px;
+  grid-row-gap: 3px;
+  z-index: 40; }
+
+.crypto-name h1 {
+  padding: 25px 15px 2px 15px; }
+
+.crypto-name p {
+  padding: 2px 15px 15px 15px; }
 
 .canvas {
-    padding: 40px;
-}
+  padding: 15px; }
 
 .create-prediction {
-    text-align: center;
-    padding: 20px;
-}
-
+  text-align: center;
+  padding: 20px; }
 
 /*# sourceMappingURL=style.css.map */

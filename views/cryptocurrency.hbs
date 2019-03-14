@@ -1,8 +1,9 @@
-          {{!-- Cryptocurrency Name --}}
+{{!-- Cryptocurrency Name --}}
 
 <section class="crypto-name">
 
-  <h1>Cryptocurrency: {{symbol}}</h1>
+  <h1>{{symbol}} Exchange</h1>
+  <p>{{symbol}}/USD</p>
 
 </section>
 
@@ -10,7 +11,7 @@
 
 <section class="canvas">
 
-  <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+  <div id="chartContainer" style="height: 500px; width: 100%;"></div>
   {{!-- <canvas id="myChart"></canvas> --}}
 
 </section>
@@ -39,8 +40,6 @@
 
 </section>
 
-
-
 {{!-- Show Users Prefictios if is logged in --}}
 
 {{!-- {{#each coins}}
@@ -60,7 +59,7 @@
   coins.forEach(coin => {
     let time = moment.utc(coin.time * 1000)
     console.log(time)
-    arrayCoinPrice.push({ x: coin.time * 1000, y: [coin.open, coin.high, coin.low, coin.close] })
+    arrayCoinPrice.push({ x: new Date(moment(coin.time * 1000).format("DD MMMM YYYY")), y: [coin.open, coin.high, coin.low, coin.close] })
   })
 
   coins.forEach(coin => arrayDayPrice.push(moment(coin.time * 1000).format("MMM Do YYYY")))
@@ -102,11 +101,15 @@
     animationEnabled: true,
     theme: "dark1", // "light1", "light2", "dark1", "dark2"
     exportEnabled: true,
+    backgroundColor: "#1F292D",
     title: {
-      text: "Facebook Stock Price - 2016"
+      text: "All Prices are in USD",
+      fontSize: 30,
+      fontWeight: "normal",
+      fontFamily: "roboto"
     },
     subtitles: [{
-      text: "All Prices are in USD"
+      text: "",
     }],
     axisY: {
       includeZero: false,
@@ -129,8 +132,11 @@
     },
     data: [{
       type: "candlestick",
+      risingColor: "#058484",
+      fallingColor: "#F15659",
+      color: "#192125",
       showInLegend: true,
-      name: "Stock Price",
+      name: "Cryptocurrency Price",
       yValueFormatString: "$#,##0.00",
       xValueFormatString: "MMMM",
       dataPoints: arrayCoinPrice
