@@ -1,5 +1,6 @@
 .crypto-name h1 {
     padding: 15px 15px 2px 15px;
+    margin-top: 20px;
 }
 
 .crypto-name p {
@@ -13,4 +14,31 @@
 .create-prediction {
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
+
+.create-prediction-text {
+    margin-top: 50px;
+}
+
+//PREDICTIONS
+
+.prediction {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: red;
+}
+
+.crypto-btn-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+

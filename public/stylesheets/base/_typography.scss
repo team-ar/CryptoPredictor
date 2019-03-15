@@ -1,23 +1,22 @@
 // Here ONLY font size, style and color.
 $primary-color: #FFFFFF;
-$primary-background-color: #1F292D;
+$primary-background-color: rgba(41, 41, 41, 1);
 $primary-background-input: rgba(250, 250, 250, 0.15);
-$primary-body-background: #192125;
+$primary-body-background: rgba(33, 33, 33, 1);
+$links-hover-color: #058484;
 body {
     font: 14px 'Roboto', sans-serif;
     overflow-x: hidden;
     background: $primary-body-background;
     color: $primary-color;
+    padding-bottom: 50px;
 }
 
 
 
 a {
+    text-decoration: none;
     color: $primary-color;
-    :hover {
-        color: $primary-color;
-        
-      }
 }
 
 
@@ -25,6 +24,14 @@ a {
 h3 {
     font-family: 'Kanit', sans-serif;
     font-size: 1.5rem;
+}
+
+.nav-right-side {
+    li {
+    :hover {
+        color: lighten($links-hover-color, 10%);
+        }
+    }
 }
 
 .nav-bar {
@@ -59,7 +66,7 @@ footer {
 #login-box {
     font-family: 'Nunito', sans-serif;
     color: $primary-color;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(33, 33, 33, 0.92);
     h2{
         font-size: 2rem;
         font-family: 'Nunito', sans-serif;
@@ -80,7 +87,7 @@ footer {
         color: darken($primary-color, 20%);
     }
     ::placeholder {
-        color: darken($primary-color,90%);
+        color: lighten($primary-color,90%);
     }    
 }
 
@@ -95,14 +102,14 @@ footer {
         }
     }
     ::placeholder {
-        color: darken($primary-color,90%);
+        color: lighten($primary-color,90%);
     } 
 }
 
 .login-btn {
-    background: rgba(250, 250, 250, 0.8);
+    background: #058484;
     font-size: 1.1rem;
-    mix-blend-mode: screen;
+    color: lighten($primary-color,90%);
 }
 
 //FORMS SIGNUP
@@ -111,7 +118,7 @@ footer {
 #signup-box {
     font-family: 'Nunito', sans-serif;
     color: $primary-color;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(33, 33, 33, 0.92);
     h2{
         font-size: 2rem;
         font-family: 'Nunito', sans-serif;
@@ -130,7 +137,7 @@ footer {
         }    
     }
     ::placeholder {
-        color: darken($primary-color,90%);
+        color: lighten($primary-color,90%);
     }    
 }
 
@@ -146,7 +153,7 @@ footer {
         }    
     }
     ::placeholder {
-        color: darken($primary-color,90%);
+        color: lighten($primary-color,90%);
     }    
 }
 
@@ -162,14 +169,24 @@ footer {
         }
     }
     ::placeholder {
-        color: darken($primary-color,90%);
+        color: lighten($primary-color,90%);
     } 
 }
 
 .signup-btn {
-    background: rgba(250, 250, 250, 0.8); 
+    background: #058484; 
     font-size: 1.1rem;
-    mix-blend-mode: screen;
+    color: lighten($primary-color,90%);
+}
+
+
+#signup2 {
+    background: #058484; 
+    font-size: 1.4rem;
+    :hover {
+        background: darken($primary-background-input,90%);
+    }
+    
 }
 
 
@@ -188,12 +205,44 @@ footer {
 
 
 .crypto-name h1 {
-    font-size: 30px;
+    font-size: 1.5rem;
 }
 
 .crypto-name p {
-    font-size: 20px;
+    font-size: 1.1rem;
     font-weight: bold;
+}
+
+.create-prediction-text {
+    font-size: 1.2rem;
+}
+
+//MAKE PREDICTION
+
+.make-prediction {
+    background: #058484; 
+    font-size: 1.4rem;
+    :hover {
+        background: darken($primary-background-input,90%);
+    }
+    
+}
+
+//GO BACK
+
+.go-back {
+    background: #058484; 
+    font-size: 1.4rem;
+    :hover {
+        background: darken($primary-background-input,90%);
+    }
+    
+}
+
+//PREDICTIONS
+
+.prediction {
+    font-size: 1.4rem;
 }
 
 

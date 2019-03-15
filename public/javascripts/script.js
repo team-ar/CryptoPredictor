@@ -6,8 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const login = document.getElementById("login")
     const signup = document.getElementById("signup")
     const signup2 = document.getElementById("signup2")
+    const globalRanking = document.getElementById("global-ranking-trigger")
+    const globalRankingBox = document.getElementById("global-ranking-box")
 
-console.log(signup)
 
     const loginBox = document.getElementById("login-box")
     const signupBox = document.getElementById("signup-box")
@@ -29,12 +30,9 @@ console.log(signup)
         
     }
         
- 
-
     var interruptor = true
     var interruptor2 = true
-
-
+  
     if (login !== null) {
 
         login.onclick = e => {
@@ -94,6 +92,22 @@ console.log(signup)
               
             }
     
+        }
+
+    }
+
+    if(globalRanking !== null) {
+
+        globalRanking.onclick = e => {
+
+            e.preventDefault()
+
+            if (globalRankingBox.style.transform === "translateX(-400px)") {
+                globalRankingBox.style.transform = "translateX(0)"
+            }else {
+                globalRankingBox.style.transform = "translateX(-400px)"
+            }
+              
         }
 
     }

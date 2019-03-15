@@ -75,7 +75,19 @@ router.get('/', (req, res, next) => {
             coin.quote.USD.percent_change_24h=parseFloat(coin.quote.USD.percent_change_24h).toFixed(2)
         })
 
-        res.render('index', { coins: marketCoins20 });   
+        User.find({})
+            .populate("predictions")
+            .then(users => {
+                console.log(users)
+                res.render('index', { coins: marketCoins20, users }); 
+            })
+            .catch(err => {
+                console.log('Error while finding one markerCoins', err)
+                next()
+            })
+           
+
+        // res.render('index', { coins: marketCoins20 });   
     })
 
     .catch(err => {

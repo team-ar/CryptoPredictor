@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP" rel="stylesheet">
   {{!-- Stylesheets --}}
-  {{!-- <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" /> --}}
+
   <link rel="stylesheet" href="/stylesheets/style.css" />
   {{!-- Ajax --}}
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
@@ -25,18 +25,18 @@
 <body>
 
   <nav class="nav-bar">
-    
+
     <figure class="logo">
       <img src="/images/logo-cp.png" alt="">
       <h3 class="name">CryptoPredictor</h3>
     </figure>
-    
+
 
     <ul class="nav-right-side">
       {{#if isUserLoggedIn }}
       <li class="nav-bar-logged">{{user.name}}</li>
       <li class="nav-bar-logged">My Rating: {{user.puntuation}}</li>
-      <li class="nav-bar-logged"><a href="/globalRanking">Global Ranking</a></li>
+      <li class="nav-bar-logged"><a id="global-ranking-trigger" href="#">Global Ranking</a></li>
       <li><a href="/logout">Log out</a></li>
       {{else}}
       <li><a id="signup">Sign up</a></li>
@@ -53,11 +53,11 @@
       <h2>Log in</h2>
 
       {{#if errorMessage}}
-        <p class="error-message">
-          {{ errorMessage }}
-        </p>
+      <p class="error-message">
+        {{ errorMessage }}
+      </p>
       {{/if}}
-   
+
       <form action="/login" method="post">
         <div class="login-email">
           <label for="email-input"></label>
@@ -70,7 +70,7 @@
         </div>
 
         <button class="login-btn" type="submit">Go to profile</button>
-     </form>
+      </form>
     </div>
 
     {{!-- <p>
@@ -84,37 +84,37 @@
 
   {{!-- CREATE SIGNUP-BOX --}}
 
-  <div id="signup-box" >
+  <div id="signup-box">
 
     <div class="signup-box-container">
 
-        <h2>Sign up</h2>
+      <h2>Sign up</h2>
 
-        {{#if errorMessage}}
-        <p class="error-message">
-          {{ errorMessage }}
-        </p>
-        {{/if}}
+      {{#if errorMessage}}
+      <p class="error-message">
+        {{ errorMessage }}
+      </p>
+      {{/if}}
 
-        <form action="/signup" method="post">
+      <form action="/signup" method="post">
 
-          <div class="signup-name">
-            <label for="name-input"></label>
-            <input type="text" name="name" placeholder="Name">
-          </div>
+        <div class="signup-name">
+          <label for="name-input"></label>
+          <input type="text" name="name" placeholder="Name">
+        </div>
 
-          <div class="signup-email">
-            <label for="email-input"></label>
-            <input type="email" name="email" placeholder="Email">
-          </div>
+        <div class="signup-email">
+          <label for="email-input"></label>
+          <input type="email" name="email" placeholder="Email">
+        </div>
 
-          <div class="signup-pwd">
-            <label for="password-input"></label>
-            <input type="password" name="password" placeholder="Password">
-          </div>
+        <div class="signup-pwd">
+          <label for="password-input"></label>
+          <input type="password" name="password" placeholder="Password">
+        </div>
 
-          <button class="signup-btn" type="submit">Create New Account</button>
-        </form>
+        <button class="signup-btn" type="submit">Create New Account</button>
+      </form>
 
     </div>
 
@@ -126,6 +126,27 @@
       </a>
     </p> --}}
   </div>
+
+
+
+    <section id="global-ranking-box" class="global-ranking-box">
+
+      <div class="global-ranking-box_wrapper">
+
+        <h2>Global Ranking</h2>
+
+        <ul>
+          {{#each users}}
+            <li>
+              {{name}}: {{puntuation}}
+            </li>
+          {{/each}}
+        </ul>
+
+      </div>
+
+    </section>
+
 
   {{{body}}}
 

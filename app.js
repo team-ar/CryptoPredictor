@@ -80,7 +80,7 @@ app.use(session({
     secret: 'personal secret',
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: 3600000 },
     store: new MongoStore({
         mongooseConnection: mongoose.connection,
         ttl: 24 * 60 * 60 // 1 day
@@ -125,8 +125,5 @@ app.use('/', authRoutes);
 
 const predictions = require('./routes/predictions');
 app.use('/', predictions);
-
-const globalRanking = require('./routes/globalRanking');
-app.use('/globalRanking', globalRanking);
 
 module.exports = app;
