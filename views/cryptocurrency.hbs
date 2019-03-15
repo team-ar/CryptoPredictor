@@ -21,27 +21,42 @@
 
 <section class="create-prediction">
 
-{{#if isUserLoggedIn }}
+  {{#if isUserLoggedIn }}
+  
+  <div class="all-predictions">
+    {{#each predictions}}
+    <div class="prediction">
+      <div class="one-prediction">
+      <h2 class="prediction-username">{{user.name}}</h2>
+        <h2>{{cryptocurrency}}</h2>
+        <p>Price: {{prediction}}</p>
 
-{{#each users}}
-{{!-- <h2>{{symbol}} Predictions</h2> --}}
-{{> predictionsPartial this}}
-{{/each}}
+        <p>Price: {{price}}</p>
 
-<div class="crypto-btn-container">
+        <div class="one-prediction-dates">
+          <p>Start Date: {{startDate}}</p>
+          <p>End Date: {{endDate}}</p>
+        </div>
+      </div>
 
-  <a class="make-prediction" href="/predictions/{{userId._id}}/{{symbol}}">Make a Prediction</a>
-  <a class="go-back" href="/">Go back</a>
+    </div>
+    {{/each}}
+  </div>
 
-</div>
+  <div class="crypto-btn-container">
+
+    <a class="make-prediction" href="/predictions/{{userId._id}}/{{symbol}}">Make a Prediction</a>
+    <a class="go-back" href="/">Go back</a>
+
+  </div>
 
 
 
-{{else}}
+  {{else}}
 
-<p class="create-prediction-text">Want to create a prediccion?</p> <a id="signup2">Sing Up</a>
+  <p class="create-prediction-text">Want to create a prediccion?</p> <a id="signup2">Sing Up</a>
 
-{{/if}}
+  {{/if}}
 
 </section>
 
@@ -69,7 +84,7 @@
 
   coins.forEach(coin => arrayDayPrice.push(moment(coin.time * 1000).format("MMM Do YYYY")))
 
-//OLD VERSION CHART
+  //OLD VERSION CHART
   // console.log(arrayDayPrice)
 
   // var ctx = document.getElementById('myChart').getContext('2d');

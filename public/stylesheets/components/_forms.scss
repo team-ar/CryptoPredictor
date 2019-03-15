@@ -29,7 +29,7 @@ $flex-direction: column;
   display: $flex-positioning;
   flex-direction: $flex-direction;
   label {
-    margin-bottom: 10px;
+    font-size: 1.1rem;
   }
   input {
     width: 80%;
@@ -137,6 +137,101 @@ $flex-direction: column;
     border: none;
     text-align: center;
     display: inline-block;
+}
+
+//CREATE PREDICTION
+
+
+.create-prediction-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
+  // height: 400px;
+  text-align: center;
+  // display: flex;
+  // align-items: center;
+  // flex-flow: column nowrap;
+  // flex-basis: 100%;
+
+  // padding-top: 100px;
+  // position: absolute;
+  // right: -400px;
+  // top: 55px;
+  // transition-duration: 1s;
+  // display: flex;
+  // align-items: center;
+  // z-index: 50;
+
+  form {
+    width: 40vw;
+  }
+
+}
+
+.prediction-market {
+  display: $flex-positioning;
+  flex-direction: $flex-direction;
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+  }
+
+}
+
+.prediction-price {
+  display: $flex-positioning;
+  flex-direction: $flex-direction;
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+  }
+
+}
+
+.start-date {
+  display: $flex-positioning;
+  flex-direction: $flex-direction;
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 80%;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+  }
+
+}
+
+.end-date {
+  display: $flex-positioning;
+  flex-direction: $flex-direction;
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+  }
+
 }
 
 

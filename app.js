@@ -32,11 +32,11 @@ setInterval(() => {
     Prediction.find({})
         .then(predictions => {
             predictions.forEach(prediction => {
-                if (moment(prediction.endDate).format("MMM Do YY") === moment(new Date()).format("MMM Do YY") && prediction.status === "live") {
+                if ((moment(prediction.endDate).format("MMM Do YY") === moment(new Date()).format("MMM Do YY") || prediction.endDate < new Date() ) && prediction.status === "live") {
                     apiCoinMarket.getCoinPrice(prediction.cryptocurrency)
                         .then(coin => {
-                            console.log(prediction.price)
-                            console.log(coin.data[prediction.cryptocurrency].quote.USD.price)
+                            // console.log(prediction.price)
+                            // console.log(coin.data[prediction.cryptocurrency].quote.USD.price)
                             if ((prediction.price / coin.data[prediction.cryptocurrency].quote.USD.price) <= 1 && (prediction.price / coin.data[prediction.cryptocurrency].quote.USD.price) >= 0.9) {
                                 User.findOneAndUpdate({ _id: prediction.user }, { $inc: { puntuation: 1 } })
                                     .then(() => {
@@ -45,6 +45,7 @@ setInterval(() => {
                                     })
                             } else {
                                 console.log("You uck")
+                                return Prediction.findOneAndUpdate({ _id: prediction._id }, { $set: { status: "dead" } })
                             }
                         })
                 } else {
@@ -54,7 +55,7 @@ setInterval(() => {
         })
         .catch(err => console.log(err))
 
-}, 100000)
+}, 1000000)
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);

@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url(vendors/bootstrap.min.css);
 html,
 body,
 div,
@@ -129,11 +128,12 @@ table {
   border-spacing: 0; }
 
 body {
+  margin: 0;
+  padding: 0;
   font: 14px 'Roboto', sans-serif;
   overflow-x: hidden;
   background: #212121;
-  color: #FFFFFF;
-  padding-bottom: 50px; }
+  color: #FFFFFF; }
 
 a {
   text-decoration: none;
@@ -179,8 +179,6 @@ footer {
 
 .login-email input {
   background: rgba(250, 250, 250, 0.15); }
-  .login-email input :hover {
-    background: rgba(21, 21, 21, 0.15); }
 
 .login-email ::placeholder {
   color: #cccccc; }
@@ -271,18 +269,70 @@ footer {
 
 .make-prediction {
   background: #058484;
-  font-size: 1.4rem; }
+  font-size: 1.2rem;
+  text-align: center; }
   .make-prediction :hover {
     background: rgba(21, 21, 21, 0.15); }
 
 .go-back {
   background: #058484;
-  font-size: 1.4rem; }
+  font-size: 1.2rem;
+  text-align: center; }
   .go-back :hover {
     background: rgba(21, 21, 21, 0.15); }
 
-.prediction {
-  font-size: 1.4rem; }
+.create-prediction-box {
+  color: #FFFFFF;
+  background: rgba(33, 33, 33, 0.92); }
+  .create-prediction-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 40px; }
+  .create-prediction-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px; }
+
+.prediction-market label {
+  font-size: 1.1rem; }
+
+.prediction-market input {
+  background: rgba(250, 250, 250, 0.15); }
+  .prediction-market input :hover {
+    background: rgba(21, 21, 21, 0.15); }
+
+.prediction-market ::placeholder {
+  color: white; }
+
+.prediction-price label {
+  font-size: 1.1rem; }
+
+.prediction-price input {
+  background: rgba(250, 250, 250, 0.15); }
+  .prediction-price input :hover {
+    background: rgba(21, 21, 21, 0.15); }
+
+.prediction-price ::placeholder {
+  color: white; }
+
+.start-date label {
+  font-size: 1.1rem; }
+
+.start-date input {
+  background: rgba(250, 250, 250, 0.15); }
+  .start-date input :hover {
+    background: rgba(21, 21, 21, 0.15); }
+
+.end-date label {
+  font-size: 1.1rem; }
+
+.end-date input {
+  background: rgba(250, 250, 250, 0.15); }
+  .end-date input :hover {
+    background: rgba(21, 21, 21, 0.15); }
+
+.create-prediction-btn {
+  background: #058484;
+  font-size: 1.1rem;
+  color: white; }
 
 .make-prediction {
   width: 100px;
@@ -292,7 +342,8 @@ footer {
   border: none;
   text-align: center;
   display: inline-block;
-  margin-right: 10px; }
+  margin-right: 10px;
+  margin-bottom: 50px; }
 
 .go-back {
   width: 100px;
@@ -301,7 +352,8 @@ footer {
   border-radius: 5px;
   border: none;
   text-align: center;
-  display: inline-block; }
+  display: inline-block;
+  margin-bottom: 50px; }
 
 .nav-bar {
   padding: 10px 0px 10px 20px;
@@ -340,6 +392,13 @@ footer {
   border: none;
   border-radius: 5px; }
 
+.create-prediction-btn {
+  width: 87%;
+  margin: 0 auto 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; }
+
 footer {
   padding: 5px 20px;
   position: fixed;
@@ -367,7 +426,7 @@ footer {
   display: flex;
   flex-direction: column; }
   .login-email label {
-    margin-bottom: 10px; }
+    font-size: 1.1rem; }
   .login-email input {
     width: 80%;
     margin: 0 auto 10px;
@@ -451,6 +510,64 @@ footer {
   text-align: center;
   display: inline-block; }
 
+.create-prediction-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
+  text-align: center; }
+  .create-prediction-box form {
+    width: 40vw; }
+
+.prediction-market {
+  display: flex;
+  flex-direction: column; }
+  .prediction-market label {
+    margin-bottom: 10px; }
+  .prediction-market input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none; }
+
+.prediction-price {
+  display: flex;
+  flex-direction: column; }
+  .prediction-price label {
+    margin-bottom: 10px; }
+  .prediction-price input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none; }
+
+.start-date {
+  display: flex;
+  flex-direction: column; }
+  .start-date label {
+    margin-bottom: 10px; }
+  .start-date input {
+    width: 80%;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none; }
+
+.end-date {
+  display: flex;
+  flex-direction: column; }
+  .end-date label {
+    margin-bottom: 10px; }
+  .end-date input {
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none; }
+
 .global-ranking-box {
   flex-flow: row wrap;
   color: #FFFFFF;
@@ -520,16 +637,35 @@ footer {
 
 .prediction {
   display: flex;
-  flex-flow: row nowrap;
   width: 90%;
   justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background: red; }
+  padding: 10px; }
+
+.prediction-username {
+  font-size: 1.3rem; }
 
 .crypto-btn-container {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center; }
+  justify-content: space-between; }
+
+.all-predictions {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  align-items: flex-start;
+  justify-content: space-between; }
+
+.one-prediction {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  padding: 2% 0; }
+  .one-prediction h2 {
+    font-size: 1.3rem;
+    margin-bottom: 5px; }
 
 /*# sourceMappingURL=style.css.map */

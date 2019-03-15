@@ -1,27 +1,45 @@
 
-<form action="/predictions/{{user.id}}/{{symbol}}" method="POST" id="predict">
-  <h2>{{symbol}}</h2>
-  <p>Create a prediction</p>
 
-  <label for="prediction">Predict market</label>
-  <input type="text" name="prediction" placeholder="BULL/BEAR">
 
-  <label for="price">Predict price</label>
-  <input type="price" name="price" placeholder="Introduce USD value">
+<div class="create-prediction-box">
 
-  <label for="startDate">Start Date</label>
-  <input type="date" name="startDate" id="startDate" placeholder="Start date">
+  <form action="/predictions/{{user.id}}/{{symbol}}" method="POST" id="predict">
+    <h2>{{symbol}}</h2>
+    <h3>Create a prediction</h3>
 
-  <label for="endDate">End Date</label>
-  <input type="date" name="endDate" id="endDate" placeholder="endDate">
+    <div class="prediction-market">
+      <label for="prediction">Predict market</label>
+      <input type="text" name="prediction" placeholder="BULL/BEAR">
+    </div>
+    
+    <div class="prediction-price">
+       <label for="price">Predict price</label>
+       <input type="price" name="price" placeholder="Introduce USD value">
+    </div>
+    
+    <div class="start-date">
+      <label for="startDate">Start Date</label>
+      <input type="date" name="startDate" id="startDate" placeholder="Start date">
+    </div>
+    
+    <div class="end-date">
+      <label for="endDate">End Date</label>
+       <input type="date" name="endDate" id="endDate" placeholder="endDate">
+    </div>
+    
 
-  <button> Create New Prediction </button>
+    <button class="create-prediction-btn"> Create New Prediction </button>
 
-  {{#if errorMsg }}
-  <div class="error-message">{{ errorMsg }}</div>
-  {{/if}}
+    {{#if errorMsg }}
+    <div class="error-message">{{ errorMsg }}</div>
+    {{/if}}
 
-</form>
+  </form>
+
+</div>
+
+
+
 
 <script>
 

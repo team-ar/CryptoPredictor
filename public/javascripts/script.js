@@ -114,15 +114,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // if (singup !== null) {
-
-    //     singup.onclick = singupEvent
-    // }
-
-    // singup.onclick = singupEvent
-    // singup2.onclick = singupEvent
-
-
-
 }, false);
 
