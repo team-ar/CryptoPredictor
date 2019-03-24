@@ -25,8 +25,8 @@ router.get('/', (req, res, next) => {
                     coin.width = 400
                     coin.height = 500
                     coin.fontSize = coin.dimension * 200
-                    coin.fontSizePrice = 60
-                    coin.fontSizeChange = 40
+                    coin.fontSizePrice = coin.dimension * 50
+                    coin.fontSizeChange = coin.dimension * 30
                     coin.gridColumn = `span 6`
                     coin.gridRow = `span 8`
                 }
@@ -49,8 +49,8 @@ router.get('/', (req, res, next) => {
                     } else if (coin.dimension > 0.15 && coin.dimension <= 0.24) {
                         coin.gridColumn = `span 2`
                         coin.gridRow = `span 1`
-                        coin.fontSize = 35
-                        coin.fontSizePrice = 25
+                        coin.fontSize = 25
+                        coin.fontSizePrice = 20
                         coin.fontSizeChange = 15
 
                     } else if (coin.dimension > 0.24) {
@@ -129,26 +129,6 @@ router.get("/coin/:id", (req, res, next) => {
                     console.log('Error while finding one markerCoins', err)
                     next()
                 })
-
-            // User.find({})
-            // .populate("predictions")
-            // .then(users => {
-            //     // let hasPredictions = []
-
-            //     // users.forEach(user => {
-            //     //     if(user.predictions.length === 0) {
-            //     //         hasPredictions.push(false)
-            //     //     } else hasPredictions.push(true)
-
-            //     // }) 
-
-            //     res.render('cryptocurrency', { coins: JSON.stringify(marketCoin.Data),symbol: id, users, userId: req.session.currentUser !== undefined ? req.session.currentUser : "notLoggin" });
-
-            // })
-            // .catch(err => {
-            //     console.log('Error while finding one markerCoins', err)
-            //     next()
-            // })
 
         })
 
